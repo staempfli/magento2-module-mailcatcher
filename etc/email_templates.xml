@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * email_templates
+ *
+ * @copyright Copyright © 2017 Staempfli AG. All rights reserved.
+ * @author    juan.alonso@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="staempfli_mailcatcher_email_test_template" label="MailCatcher Test" file="test.html" type="text" module="Staempfli_MailCatcher" area="adminhtml"/>
+</config>

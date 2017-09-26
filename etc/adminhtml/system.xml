@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * system
+ *
+ * @copyright Copyright © 2017 Staempfli AG. All rights reserved.
+ * @author    juan.alonso@staempfli.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="staempfli" translate="label" sortOrder="800">
+            <label>Staempfli</label>
+        </tab>
+        <section id="staempfli_mailcatcher" translate="label" type="text" sortOrder="999" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Mail Catcher</label>
+            <tab>staempfli</tab>
+            <resource>Staempfli_MailCatcher::configuration</resource>
+            <group id="configuration" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Mail Catcher Configuration</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable on Dev servers if you want to catch mails. It should always be disabled on Prod environments</comment>
+                </field>
+                <field id="whitelist" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>White list Emails/Domains</label>
+                    <comment>Comma separated list of emails/domains that are not caught</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="redirect_recipient" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Redirect Email Recipient</label>
+                    <validate>validate-email</validate>
+                    <comment>If set, caught emails will be redirected to this address (i.e something@trash-mail.com). If empty, caught emails will be logged</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

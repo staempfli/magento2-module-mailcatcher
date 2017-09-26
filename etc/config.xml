@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * config.xml
+ *
+ * @copyright Copyright © 2017 Staempfli AG. All rights reserved.
+ * @author    juan.alonso@staempfli.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <staempfli_mailcatcher>
+            <configuration>
+                <enabled>0</enabled>
+            </configuration>
+        </staempfli_mailcatcher>
+    </default>
+</config>

@@ -49,7 +49,7 @@ See: [etc/di.xml](etc/di.xml)
 In order to prove that the mail catcher always work, we recommend you to run included integration tests on your CI environment. Add this into your `dev/tests/integration/framework/phpunit.xml`:
 
 ```
-<directory suffix="Test.php">&magentoDir;/vendor/staempfli/magento2-module-mailcatcher/*/Test/Integration</directory>
+<directory suffix="Test.php">&magentoDir;/vendor/staempfli/magento2-module-mailcatcher/Test/Integration</directory>
 ```
 
 ## Prerequisites

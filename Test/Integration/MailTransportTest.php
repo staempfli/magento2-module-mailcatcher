@@ -18,7 +18,7 @@ use Staempfli\MailCatcher\Config\CatcherConfig;
 use Staempfli\MailCatcher\Transport\MailCatcherTransport;
 use Staempfli\MailCatcher\Transport\MailCatcherTransportProxy;
 
-class MailTransportTest extends \PHPUnit_Framework_TestCase
+class MailTransportTest extends \PHPUnit\Framework\TestCase
 {
     const TEST_EMAIL_IDENTIFIER = 'staempfli_mailcatcher_email_test_template';
 

@@ -89,9 +89,8 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
      */
     public function testCatchEmailsEnabled()
     {
@@ -99,9 +98,8 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadDisableCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 0
      */
     public function testCatchEmailsDisabled()
     {
@@ -109,9 +107,8 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
      */
     public function testCatchAllEmails()
     {
@@ -133,9 +130,9 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableWithWhitelistCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/whitelist whitelist_one@mail.catcher,whitelist_two@mail.catcher,whitelist.catcher
      */
     public function testCatchOnlyNotWhitelistedEmails()
     {
@@ -157,9 +154,10 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableWithWhitelistAndRedirectCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/whitelist whitelist_one@mail.catcher,whitelist_two@mail.catcher,whitelist.catcher
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/redirect_recipient redirect_recipient@mail.catcher
      */
     public function testNotCatchRedirectedEmails()
     {
@@ -187,9 +185,8 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
      */
     public function testSeveralCatchAllEmails()
     {
@@ -205,9 +202,9 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableWithWhitelistCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/whitelist whitelist_one@mail.catcher,whitelist_two@mail.catcher,whitelist.catcher
      */
     public function testSeveralCatchOnlyNotWhitelistedEmails()
     {
@@ -227,9 +224,10 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableWithWhitelistAndRedirectCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/whitelist whitelist_one@mail.catcher,whitelist_two@mail.catcher,whitelist.catcher
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/redirect_recipient redirect_recipient@mail.catcher
      */
     public function testSeveralNotCatchRedirectedEmails()
     {
@@ -262,9 +260,9 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableWithWhitelistCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/whitelist whitelist_one@mail.catcher,whitelist_two@mail.catcher,whitelist.catcher
      */
     public function testCatchCcEmails()
     {
@@ -281,9 +279,9 @@ class MailTransportTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadEnableWithWhitelistCatcherConfiguration
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/enabled 1
+     * @magentoConfigFixture default/staempfli_mailcatcher/configuration/whitelist whitelist_one@mail.catcher,whitelist_two@mail.catcher,whitelist.catcher
      */
     public function testCatchBccEmails()
     {

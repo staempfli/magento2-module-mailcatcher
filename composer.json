@@ -3,8 +3,8 @@
   "description": "magento 2 module to catch, log and redirect emails on local and dev",
   "keywords": ["magento2", "module", "email", "mail", "catch", "catcher"],
   "require": {
-    "php": "^7.0|^7.1",
-    "magento/framework": "~100.1|~101.0"
+    "php": "^7.0|^7.1|~7.2.0",
+    "magento/framework": "~100.1|~101.0|~102.0"
   },
   "type": "magento2-module",
   "license": [
@@ -12,11 +12,7 @@
     "AFL-3.0"
   ],
   "autoload": {
-    "files": [
-      "registration.php"
-    ],
-    "psr-4": {
-      "Staempfli\\MailCatcher\\": ""
-    }
+    "files": ["registration.php"],
+    "psr-4": {"Staempfli\\MailCatcher\\": ""}
   }
 }

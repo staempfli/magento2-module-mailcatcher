@@ -23,6 +23,8 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
      */
     private $mailCatcherRepository;
 
+    private $recipients = [];
+
     public function __construct(
         CatcherConfig $catcherConfig,
         MailCatcherRepository $mailCatcherRepository,
@@ -36,13 +38,15 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
     /**
      * {@inheritdoc}
      */
-    public function AddTo($address, $name = '')
+    public function addTo($address, $name = '')
     {
         $redirectAddress = $this->getRedirectRecipient($address);
         if ($redirectAddress) {
             $address = $redirectAddress;
         }
-        parent::addTo($address, $name);
+
+        $this->recipients[] = $address;
+        parent::addTo($address);
     }
 
     /**
@@ -67,6 +71,11 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
             $address = $redirectAddress;
         }
         return parent::addBcc($address);
+    }
+
+    public function getRecipients()
+    {
+        return $this->recipients;
     }
 
     /**

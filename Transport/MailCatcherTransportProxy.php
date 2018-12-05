@@ -8,7 +8,7 @@
 
 namespace Staempfli\MailCatcher\Transport;
 
-use Magento\Framework\Mail\Message;
+use Staempfli\MailCatcher\Mail\Message;
 use Magento\Framework\Mail\TransportInterface;
 use Staempfli\MailCatcher\Config\CatcherConfig;
 use Staempfli\MailCatcher\Logger\MailCatcherLogger;
@@ -98,8 +98,8 @@ class MailCatcherTransportProxy implements TransportInterface
     private function getBodyAsString()
     {
         $body = $this->message->getBody();
-        if ($body instanceof \Zend_Mime_Part) {
-            return $body->getContent();
+        if ($body instanceof \Zend\Mime\Message) {
+            return $body->generateMessage();
         }
         return $body;
     }

@@ -73,6 +73,15 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
         return parent::addBcc($address);
     }
 
+    public function createAttachment($body,
+                                     $mimeType    = \Zend_Mime::TYPE_OCTETSTREAM,
+                                     $disposition = \Zend_Mime::DISPOSITION_ATTACHMENT,
+                                     $encoding    = \Zend_Mime::ENCODING_BASE64,
+                                     $filename    = null)
+    {
+
+    }
+
     public function getRecipients()
     {
         return $this->recipients;

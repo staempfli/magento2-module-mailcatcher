@@ -2,6 +2,7 @@
     <module name="Staempfli_MailCatcher" setup_version="0.0.1" >
         <sequence>
             <module name="Magento_Email"/>
+            <module name="Ebizmarts_PosEmail"/>
         </sequence>
     </module>
 </config>

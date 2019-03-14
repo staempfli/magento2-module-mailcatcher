@@ -8,7 +8,7 @@
 
 namespace Staempfli\MailCatcher\Mail;
 
-use Magento\Framework\Mail\MessageInterface;
+use Ebizmarts\PosEmail\Api\MessageInterface;
 use Staempfli\MailCatcher\Config\CatcherConfig;
 use Staempfli\MailCatcher\Repository\MailCatcherRepository;
 
@@ -73,14 +73,7 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
         return parent::addBcc($address);
     }
 
-    public function createAttachment($body,
-                                     $mimeType    = \Zend_Mime::TYPE_OCTETSTREAM,
-                                     $disposition = \Zend_Mime::DISPOSITION_ATTACHMENT,
-                                     $encoding    = \Zend_Mime::ENCODING_BASE64,
-                                     $filename    = null)
-    {
-
-    }
+    public function createAttachment($body, $mimeType = \Zend_Mime::TYPE_OCTETSTREAM, $filename = null) { }
 
     public function getRecipients()
     {
@@ -124,4 +117,8 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
         return $address;
     }
 
+    /**
+     * @return $this
+     */
+    public function buildBody() { }
 }

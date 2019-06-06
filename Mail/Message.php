@@ -121,4 +121,11 @@ class Message extends \Magento\Framework\Mail\Message implements MessageInterfac
      * @return $this
      */
     public function buildBody() { }
+
+    /**
+     * @param string $fromAddress
+     * @param null $fromName
+     * @return $this
+     */
+    public function setFromAddress($fromAddress, $fromName = null) {}
 }

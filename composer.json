@@ -1,5 +1,5 @@
 {
-  "name": "staempfli/magento2-module-mailcatcher",
+  "name": "janssens/magento2-module-mailcatcher",
   "description": "magento 2 module to catch, log and redirect emails on local and dev",
   "keywords": ["magento2", "module", "email", "mail", "catch", "catcher"],
   "require": {

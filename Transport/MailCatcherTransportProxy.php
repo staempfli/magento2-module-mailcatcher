@@ -59,7 +59,7 @@ class MailCatcherTransportProxy implements TransportInterface
     public function sendMessage()
     {
         if ($this->shouldCatchEmail()) {
-            $this->mailCatcherLogger->addInfo(
+            $this->mailCatcherLogger->info(
                 "Recipients: " . implode(',', $this->message->getRecipients()) . PHP_EOL .
                 "Subject: " . $this->message->getSubject() . PHP_EOL .
                 "Body: " . $this->getBodyAsString() . PHP_EOL
